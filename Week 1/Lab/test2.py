@@ -1,3 +1,6 @@
+import sys
+sys.path.append('C:\Users\Neerav Basant\Documents\GitHub\Data-Analytics-Programming\Week 1\Lab')
+
 import randomized_input
 import compute_highest_affinity
 

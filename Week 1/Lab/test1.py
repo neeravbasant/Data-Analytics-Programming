@@ -1,3 +1,6 @@
+import sys
+sys.path.append('C:\Users\Neerav Basant\Documents\GitHub\Data-Analytics-Programming\Week 1\Lab')
+
 import compute_highest_affinity
 
 site_list = ["a.com", "b.com", "a.com", "b.com", "a.com", "c.com"]
