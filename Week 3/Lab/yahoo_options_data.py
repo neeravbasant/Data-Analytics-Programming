@@ -1,9 +1,7 @@
 import json
-import sys
 import re
 import urllib
 from bs4 import BeautifulSoup as bs
-import unicodedata
 
 def contractAsJson(filename):
     
@@ -104,7 +102,3 @@ def contractAsJson(filename):
     jsonQuoteData = json.dumps(final_output, indent=4, sort_keys = True)
    
     return jsonQuoteData
-
-
-
-

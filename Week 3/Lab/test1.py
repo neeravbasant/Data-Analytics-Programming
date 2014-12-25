@@ -1,8 +1,11 @@
+import sys
+sys.path.append('C:\Users\Neerav Basant\Documents\GitHub\Data-Analytics-Programming\Week 3\Lab')
+
 import json
 import yahoo_options_data
 
-computedJson = yahoo_options_data.contractAsJson("f.dat")
-expectedJson = open("f.json").read()
+computedJson = yahoo_options_data.contractAsJson("aapl.dat")
+expectedJson = open("aapl.json").read()
 
 if json.loads(computedJson) != json.loads(expectedJson):
   print "Test failed!"
