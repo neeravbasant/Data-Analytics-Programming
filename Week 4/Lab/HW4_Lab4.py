@@ -1,3 +1,8 @@
+
+#############################
+####     Performance     ####
+#############################
+
 def insertionsort(A):
     for i in range(len(A)):
         for j in range(i+1,len(A)):
@@ -7,7 +12,7 @@ def insertionsort(A):
 
 B =  []
 import random
-for i in range(0,1000000):
+for i in range(0,10000):
     B.append(random.random())
 
 Bsorted = sorted(B)
@@ -70,3 +75,32 @@ for i in range(0,4500000):
     srt10.append(random.random())
 
 %timeit [sorted(srt10)]
+
+#############################
+####      Graphing       ####
+#############################
+
+from numpy import *
+from pylab import *
+iterations = 1000
+
+density = 1000
+x_min, x_max = -1, 2
+y_min, y_max = -1.5, 1.5
+x, y = meshgrid(linspace(x_min, x_max, density),
+linspace(y_min, y_max, density))
+
+c = x + 1j*y
+z = c.copy()
+m = zeros((density, density))
+for n in xrange(iterations):
+    print "Iteration No." , n
+    indices = (abs(z) <= 1)
+    z[indices] = z[indices]**2 + c[indices] 
+    m[indices] = n
+imshow(m,
+extent=(x_min, x_max, y_min, y_max))
+title('Mandelbrot Set')
+xlabel('Re(z)')
+ylabel('Im(z)')
+show()
